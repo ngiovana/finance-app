@@ -28,14 +28,6 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<User> authenticateUser(String email, String password) {
-        Optional<User> userOptional = userRepository.findByEmail(email);
-        if (userOptional.isPresent() && passwordEncoder.matches(password, userOptional.get().getPassword())) {
-            return userOptional;
-        }
-        return Optional.empty();
-    }
-
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
