@@ -38,19 +38,16 @@ public class JwtTokenProvider {
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
     }
 
-    // Valida o token JWT
     public boolean validateToken(String authToken) {
         try {
             Jwts.parserBuilder().setSigningKey(key()).build().parseClaimsJws(authToken);
             return true;
         } catch (Exception ex) {
-            // Logar a exceção para depuração (token inválido, expirado, etc.)
             System.out.println("JWT inválido: " + ex.getMessage());
         }
         return false;
     }
 
-    // Extrai o username (ou email, dependendo do que você definiu como subject) do token JWT
     public String getUsernameFromToken(String token) {
         return Jwts.parserBuilder().setSigningKey(key()).build().parseClaimsJws(token).getBody().getSubject();
     }
