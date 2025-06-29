@@ -16,7 +16,7 @@ public class TransactionController {
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }
-    
+
     @PostMapping("/user/{userId}")
     public ResponseEntity<Transaction> addTransaction(@PathVariable Long userId, @RequestBody Transaction transaction) {
         Transaction newTransaction = transactionService.addTransaction(userId, transaction);

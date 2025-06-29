@@ -31,7 +31,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@RequestBody User user) {
-        Optional<User> authenticatedUser = userService.authenticateUser(user.getUsername(), user.getPassword());
+        Optional<User> authenticatedUser = userService.authenticateUser(user.getEmail(), user.getPassword());
         if (authenticatedUser.isPresent()) {
             // String jwt = jwtTokenProvider.generateToken(authenticatedUser.get());
             // return new ResponseEntity<>(new AuthResponse(jwt, authenticatedUser.get().getId()), HttpStatus.OK);

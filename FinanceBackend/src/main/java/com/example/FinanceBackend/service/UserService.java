@@ -18,9 +18,9 @@ public class UserService {
     }
 
     public User registerUser(User user) {
-        if (userRepository.existsByUsername(user.getUsername())) {
-            throw new RuntimeException("Username já existe!");
-        }
+//        if (userRepository.existsByUsername(user.getUsername())) {
+//            throw new RuntimeException("Username já existe!");
+//        }
         if (userRepository.existsByEmail(user.getEmail())) {
             throw new RuntimeException("Email já existe!");
         }
@@ -28,20 +28,12 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<User> authenticateUser(String username, String password) {
-        Optional<User> userOptional = userRepository.findByUsername(username);
+    public Optional<User> authenticateUser(String email, String password) {
+        Optional<User> userOptional = userRepository.findByEmail(email);
         if (userOptional.isPresent() && passwordEncoder.matches(password, userOptional.get().getPassword())) {
             return userOptional;
         }
         return Optional.empty();
-    }
-
-    public Optional<User> findByUsername(String username) {
-        return userRepository.findByUsername(username);
-    }
-
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
     }
 }
 
