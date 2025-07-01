@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">FinanceFlow</string>
+    <string name="app_name">FinanceApp</string>
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Fechar menu</string>
+    <string-array name="categorias_array">
+        <item>Contas</item>
+        <item>Lazer</item>
+        <item>Comida</item>
+        <item>Transporte</item>
+        <item>Salário</item>
+        <item>Outros</item>
+    </string-array>
+
 </resources>

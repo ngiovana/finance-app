@@ -8,15 +8,20 @@
     android:gravity="center">
 
     <TextView
-        android:id="@+id/textViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Cadastro"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:layout_marginBottom="32dp"
         android:textColor="#4B0082"
-        android:gravity="center_horizontal"/>
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/editTextNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        android:layout_marginBottom="16dp"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -35,21 +40,9 @@
         android:layout_marginBottom="24dp"/>
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entrar" />
-
-    <TextView
-        android:id="@+id/textViewCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Não tem uma conta? Cadastre-se aqui"
-        android:textColor="#4B0082"
-        android:textSize="14sp"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center_horizontal"
-        android:clickable="true"
-        android:focusable="true" />
+        android:text="Cadastrar"/>
 
 </LinearLayout>

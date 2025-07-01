@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:title="Finanças"
+            android:titleTextColor="#FFFFFF"
+            android:background="#4B0082" />
+
+        <Button
+            android:id="@+id/buttonCadastrarTransacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Transação"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonListarTransacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listar Transações"
+            android:layout_marginTop="8dp" />
+
+
+        <ScrollView
+            android:id="@+id/scrollTabela"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp">
+
+            <TableLayout
+                android:id="@+id/tabelaTransacoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:padding="8dp">
+
+                <TableRow>
+                    <TextView android:text="Descrição" android:textStyle="bold" />
+                    <TextView android:text="Valor" android:textStyle="bold" />
+                    <TextView android:text="Data" android:textStyle="bold" />
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFFFFF"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

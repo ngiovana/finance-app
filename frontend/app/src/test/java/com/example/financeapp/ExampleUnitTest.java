@@ -1,4 +1,4 @@
-package com.example.financeflow;
+package com.example.financeapp;
 
 import org.junit.Test;
 
