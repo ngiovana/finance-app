@@ -21,41 +21,34 @@
 
         <Button
             android:id="@+id/buttonCadastrarTransacao"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastrar Transação"
-            android:layout_marginTop="8dp" />
+            android:text="Cadastrar Transações"
+            android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/buttonListarTransacoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Listar Transações"
-            android:layout_marginTop="8dp" />
-
-
-        <ScrollView
-            android:id="@+id/scrollTabela"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginTop="16dp">
+            android:text="Listar Transações"
+            android:layout_marginTop="16dp" />
 
-            <TableLayout
-                android:id="@+id/tabelaTransacoes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:stretchColumns="*"
-                android:padding="8dp">
+        <Button
+            android:id="@+id/buttonAtualizarTransacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atualizar Transação"
+            android:layout_marginTop="16dp" />
 
-                <TableRow>
-                    <TextView android:text="Descrição" android:textStyle="bold" />
-                    <TextView android:text="Valor" android:textStyle="bold" />
-                    <TextView android:text="Data" android:textStyle="bold" />
-                </TableRow>
 
-            </TableLayout>
-        </ScrollView>
+        <Button
+            android:id="@+id/buttonExcluirTransacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Excluir Transações"
+            android:layout_marginTop="16dp" />
+
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

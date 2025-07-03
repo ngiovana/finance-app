@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome da Transação Atual"
+            android:layout_marginTop="8dp" />
+        <EditText
+            android:id="@+id/editNomeAntigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: Supermercado" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Novo Nome"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/editNovoNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: Feira" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Novo Valor"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/editNovoValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: 150"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nova Data"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/editNovaData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: 10/07/2025"
+            android:inputType="date" />
+
+        <Button
+            android:id="@+id/buttonAtualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atualizar"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/design_default_color_primary"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

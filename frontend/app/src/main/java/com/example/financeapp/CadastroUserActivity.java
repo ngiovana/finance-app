@@ -2,7 +2,6 @@ package com.example.financeapp;
 
 import static com.example.financeapp.Constantes.*;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +19,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CadastroActivity extends AppCompatActivity {
+public class CadastroUserActivity extends AppCompatActivity {
 
     EditText editTextNome, editTextEmail, editTextSenha;
     Button buttonCadastrar;
@@ -28,7 +27,7 @@ public class CadastroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+        setContentView(R.layout.activity_cadastro_user);
 
         editTextNome = findViewById(R.id.editTextNome);
         editTextEmail = findViewById(R.id.editTextEmail);
@@ -42,7 +41,7 @@ public class CadastroActivity extends AppCompatActivity {
                 String email = editTextEmail.getText().toString();
                 String senha = editTextSenha.getText().toString();
 
-                RequestQueue queue = Volley.newRequestQueue(CadastroActivity.this);
+                RequestQueue queue = Volley.newRequestQueue(CadastroUserActivity.this);
 
                 JSONObject jsonBody = new JSONObject();
                 try {
@@ -61,16 +60,16 @@ public class CadastroActivity extends AppCompatActivity {
                             try {
                                 String sucesso = response.getString("username");
                                 if (sucesso!= null) {
-                                    Toast.makeText(CadastroActivity.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CadastroUserActivity.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                                     finish();
                                 }
 
                             }catch (JSONException e) {
                                 e.printStackTrace();
-                                Toast.makeText(CadastroActivity.this, "Erro no formato de resposta", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CadastroUserActivity.this, "Erro no formato de resposta", Toast.LENGTH_SHORT).show();
                             }
                         },
-                        error -> Toast.makeText(CadastroActivity.this, "Erro: " + error.getMessage(), Toast.LENGTH_SHORT).show()
+                        error -> Toast.makeText(CadastroUserActivity.this, "Erro: " + error.getMessage(), Toast.LENGTH_SHORT).show()
                 );
                 queue.add(request);
 

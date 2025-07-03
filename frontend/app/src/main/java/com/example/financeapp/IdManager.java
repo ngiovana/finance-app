@@ -3,10 +3,9 @@ package com.example.financeapp;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class TokenManager {
-
-    private static final String PREF_NAME = "auth";
-    private static final String KEY_TOKEN = "token";
+public class IdManager {
+    private static final String PREF_NAME = "user";
+    private static final String KEY_ID = "id_user";
     private static SharedPreferences prefs;
 
     public static void init(Context context) {
@@ -15,23 +14,22 @@ public class TokenManager {
         }
     }
 
-    public static void salvarToken(String token) {
+    public static void salvarId(int id) {
         if (prefs != null) {
-            prefs.edit().putString(KEY_TOKEN, token).apply();
+            prefs.edit().putInt(KEY_ID, id).apply();
         }
     }
 
-    public static String getToken() {
+    public static int getId() {
         if (prefs != null) {
-
-            return prefs.getString(KEY_TOKEN, null);
+            return prefs.getInt(KEY_ID, -1);
         }
-        return null;
+        return -1;
     }
 
-    public static void removerToken() {
+    public static void removerId() {
         if (prefs != null) {
-            prefs.edit().remove(KEY_TOKEN).apply();
+            prefs.edit().remove(KEY_ID).apply();
         }
     }
 }

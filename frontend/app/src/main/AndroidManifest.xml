@@ -12,9 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinanceApp">
-        <activity android:name=".CadastroActivity" />
+        <activity android:name=".CadastroUserActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".TransacaoActivity" />
+        <activity android:name=".CadastrarTransacaoActivity" />
+        <activity android:name=".ListarTransacoesActivity" />
+        <activity android:name=".AtualizarTransacaoActivity" />
+        <activity android:name=".ExcluirTransacaoActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -19,12 +19,13 @@ public class MainActivity extends AppCompatActivity {
     Button buttonLogin;
     TextView textViewCadastro;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         TokenManager.init(getApplicationContext());
+        IdManager.init(getApplicationContext());
 
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextSenha = findViewById(R.id.editTextSenha);
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         textViewCadastro.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CadastroActivity.class);
+            Intent intent = new Intent(MainActivity.this, CadastroUserActivity.class);
             startActivity(intent);
         });
     }
@@ -64,14 +65,17 @@ public class MainActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                BASE_URL+"api/auth/login",
+                BASE_URL + "api/auth/login",
                 jsonBody,
                 response -> {
                     try {
-                        String sucesso = response.getString("token");
-                        if (sucesso!= null) {
+                        String token = response.getString("token");
 
-                            TokenManager.salvarToken(sucesso);
+                        if (token != null) {
+                            int id = response.getInt("userId");
+
+                            TokenManager.salvarToken(token);
+                            IdManager.salvarId(id);
 
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             startActivity(intent);
@@ -84,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Erro no formato de resposta", Toast.LENGTH_SHORT).show();
                     }
                 },
-
                 error -> {
                     String mensagemErro;
                     if (error.networkResponse != null && error.networkResponse.data != null) {
@@ -94,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     Toast.makeText(MainActivity.this, "Erro: " + mensagemErro, Toast.LENGTH_LONG).show();
                 }
-                 );
+        );
 
         queue.add(request);
     }
