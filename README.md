@@ -23,7 +23,7 @@ git clone https://github.com/ngiovana/finance-app.git
 ```
 
 ### 2. Rodando o backend (Spring Boot)
-Abra a pasta finance-app/backend no IntelliJ.
+Abra a pasta finance-app/FinanceBackend no IntelliJ.
 
 Verifique se possui Java 17+ e Maven instalados.
 
