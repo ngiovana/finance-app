@@ -17,8 +17,6 @@
         android:id="@+id/editTextNomeTransacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ex: Aluguel"
-        android:textColorHint="#4F4F4F"
         android:padding="10dp"
         android:background="@android:drawable/edit_text"
         android:inputType="text"
