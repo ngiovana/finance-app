@@ -10,7 +10,7 @@ Desenvolvido por: **Giovana Niehues** e **Gisele de Avila**.
 
 Acesse o tutorial em vídeo completo no link abaixo:
 
-🔗 [Ver vídeo no Moodle](https://moodle.joinville.udesc.br/mod/assign/view.php?id=290340)
+🔗 [Ver vídeo no Youtube]([https://moodle.joinville.udesc.br/mod/assign/view.php?id=290340](https://www.youtube.com/watch?v=VOBXw717U80))
 
 ---
 
