@@ -42,7 +42,7 @@ public static final String BASE_URL = "http://<IP-DA-SUA-MÁQUINA>:8081/";
 ```
 
 ### 4. Rodando o app Android
-Abra o Android Studio e selecione a pasta: finance-app/android-app
+Abra o Android Studio e selecione a pasta: finance-app/frontend
 
 Aguarde a sincronização do Gradle e a instalação das dependências.
 
